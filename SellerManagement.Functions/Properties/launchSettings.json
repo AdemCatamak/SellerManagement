@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Account.Functions": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7177",
+      "launchBrowser": false,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

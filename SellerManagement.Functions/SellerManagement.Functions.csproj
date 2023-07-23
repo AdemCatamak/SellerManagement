@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <AzureFunctionsVersion>V4</AzureFunctionsVersion>
+        <Nullable>enable</Nullable>
+        <GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
+        <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.18.0" />
+        <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.CosmosDB" Version="4.3.0" />
+        <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.DurableTask" Version="2.10.0" />
+        <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.ServiceBus" Version="5.11.0" />
+        <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.2.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Update="host.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="local.settings.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="NuGet.Protocol">
+        <HintPath>..\..\..\..\.AzureToolsForIntelliJ\AzureFunctionsCoreTools\v4\4.40.0\NuGet.Protocol.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+</Project>
