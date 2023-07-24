@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Azure.Messaging.ServiceBus;
 using Microsoft.Azure.WebJobs;
-using NuGet.Protocol;
+using Newtonsoft.Json;
 using SellerManagement.Functions.Models;
 
 namespace SellerManagement.Functions.Triggers;
@@ -28,7 +28,7 @@ public static class PublishSellerCreatedHandler
     {
         var sellerCreatedMessageList = sellers.Where(s => !s.UpdatedOn.HasValue)
             .Select(s => new SellerCreatedEvent { Email = s.Email })
-            .Select(e => new ServiceBusMessage(e.ToJson()) { MessageId = e.Email })
+            .Select(e => new ServiceBusMessage(JsonConvert.SerializeObject(e)) { MessageId = e.Email })
             .ToList();
 
         if (sellerCreatedMessageList.Any())

@@ -5,9 +5,13 @@ This project was created as a sample project to gain experience on the Azure Fun
 An example is created through a scenario about the demand to be a seller on a platform. 
 
 1- The user creates a record. (HttpTrigger)
+
 2- The message that a seller is created in the system is raised. (CosmosDbTrigger -> ServiceBus). (CosmosDbTrigger -> ServiceBus)
+
 3- An e-mail is sent to the seller about the rules and its approval is awaited. (ServiceBusTrigger -> DurableClient)
+
 4- The seller approves or rejects. (HttpTrigger -> DurableClient)
+
 5- Depending on the response of the person, the status of the seller object changes. (OrchestrationTrigger)
 
 ## __RUN__
