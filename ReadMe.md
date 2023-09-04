@@ -6,7 +6,7 @@ An example is created through a scenario about the demand to be a seller on a pl
 
 1- The user creates a record. (HttpTrigger)
 
-2- The message that a seller is created in the system is raised. (CosmosDbTrigger -> ServiceBus). (CosmosDbTrigger -> ServiceBus)
+2- The message that a seller is created in the system is raised. (CosmosDbTrigger -> ServiceBus).
 
 3- An e-mail is sent to the seller about the rules and its approval is awaited. (ServiceBusTrigger -> DurableClient)
 
